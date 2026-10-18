@@ -15,7 +15,6 @@ PROJECT=homepage
 
 [ -r "$CONF/deploy.env" ] || { echo "missing $CONF/deploy.env (run deploy/bootstrap.sh)" >&2; exit 1; }
 . "$CONF/deploy.env"    # REPO_URL, BRANCH
-export GIT_SSH_COMMAND="ssh -i $CONF/id_ed25519 -o IdentitiesOnly=yes -o StrictHostKeyChecking=accept-new"
 
 # Optional push notification: put the full ntfy topic URL in $CONF/ntfy_url.
 notify() {    # notify <title> <tags> <body>

@@ -1,14 +1,15 @@
 #!/bin/sh
 # One-time setup on the Docker host (the container that runs Homepage).
 #
-#   sudo ./deploy/bootstrap.sh
+#   git clone https://github.com/gunz0blazin/homelab-homepage.git /tmp/homelab-homepage
+#   sudo /tmp/homelab-homepage/deploy/bootstrap.sh
 #
-# Installs git and the YAML checker, makes a read-only deploy key for the private repo,
-# installs the deploy command and the 5-minute timer, and runs the first deploy.
-# Safe to run again: it skips what's already done and never overwrites a key or setting.
+# Installs git and the YAML checker, installs the deploy command and the 5-minute
+# timer, and runs the first deploy. The repo is public, so no key or login is needed.
+# Safe to run again: it skips what's already done and never overwrites a setting.
 set -eu
 
-REPO_URL_DEFAULT=git@github.com:gunz0blazin/homelab-homepage.git
+REPO_URL_DEFAULT=https://github.com/gunz0blazin/homelab-homepage.git
 CONF=/etc/homepage-deploy
 HERE=$(cd "$(dirname "$0")" && pwd)
 
@@ -18,7 +19,7 @@ fi
 
 echo "==> Packages"
 apt-get update -qq
-apt-get install -y git curl openssh-client python3-yaml
+apt-get install -y git curl python3-yaml
 
 command -v docker >/dev/null 2>&1 || { echo "Docker isn't installed on this machine." >&2; exit 1; }
 docker compose version >/dev/null 2>&1 || { echo "The 'docker compose' plugin is missing." >&2; exit 1; }
@@ -39,19 +40,6 @@ if [ ! -e "$CONF/ntfy_url" ]; then
   read -r ntfy
   [ -n "$ntfy" ] && { printf '%s' "$ntfy" > "$CONF/ntfy_url"; chmod 0600 "$CONF/ntfy_url"; }
 fi
-
-if [ ! -e "$CONF/id_ed25519" ]; then
-  echo "==> Deploy key"
-  ssh-keygen -q -t ed25519 -N '' -C "homepage-deploy@$(hostname)" -f "$CONF/id_ed25519"
-fi
-echo
-echo "    Add this public key to the GitHub repo as a read-only deploy key"
-echo "    (Settings -> Deploy keys; leave 'Allow write access' OFF):"
-echo
-cat "$CONF/id_ed25519.pub"
-echo
-printf '    Press Enter once the key is added: '
-read -r _
 
 echo "==> Deploy command and timer"
 install -m 0755 "$HERE/homepage-deploy" /usr/local/bin/homepage-deploy

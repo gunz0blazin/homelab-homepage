@@ -18,12 +18,12 @@ Edit `config/services.yaml` (tiles) or `config/settings.yaml` (look and layout),
    ```
    cd ~/homepage && docker compose down
    ```
-2. Get the repo's `deploy/` folder onto the host and run the bootstrap. It prints a public key.
+2. Clone the repo and run the bootstrap. The repo is public, so no key or login is needed.
    ```
-   sudo ./deploy/bootstrap.sh
+   git clone https://github.com/gunz0blazin/homelab-homepage.git /tmp/homelab-homepage
+   sudo /tmp/homelab-homepage/deploy/bootstrap.sh
    ```
-3. Add that key to the repo as a read-only deploy key (the bootstrap waits for you).
-4. The bootstrap runs the first deploy and starts the timer.
+3. The bootstrap runs the first deploy and starts the timer.
 
 Useful commands on the host:
 

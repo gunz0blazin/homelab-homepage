@@ -11,8 +11,8 @@ Config for the Homepage dashboard at `http://dash.home` (container on the Docker
 
 ## Rules
 
-- **Never commit secrets** (API keys, tokens, passwords, the ntfy URL, deploy keys). `.gitignore` blocks `*.env`, but check the diff anyway. Widgets that need keys use `{{HOMEPAGE_VAR_NAME}}` in the YAML, with the value in an env file on the server.
-- The repo is private and holds internal addresses. Keep it private.
+- **This repo is public.** Never commit secrets (API keys, tokens, passwords, the ntfy URL, SSH keys) or anything you wouldn't post publicly. `.gitignore` blocks `*.env`, but check the diff anyway. Widgets that need keys use `{{HOMEPAGE_VAR_NAME}}` in the YAML, with the value in an env file on the server.
+- It's public on purpose, so the server can pull it with no key or login. The only thing it reveals is the lab's private addresses and service names, which aren't reachable from outside the network. Don't add anything more sensitive than that (no public IP, no Tailscale name, no domain names you own).
 - Addresses follow the lab plan: Lab is `192.168.20.0/24` (Proxmox `.10`, Pi-hole `.11`, Docker host `.13`); the NAS is `192.168.1.9` until it moves to Lab (`.15`). Names are `<service>.home`, served by Nginx Proxy Manager.
 - Each service is one tile: `icon` (a name from the dashboard-icons set), `href` (the `.home` name), and `siteMonitor` (direct IP and port, for the status dot). Drop `siteMonitor` for HTTPS backends with self-signed certificates if the dot stays red.
 - Keep YAML to two-space indents, no tabs. GitHub Actions (`checks.yml`) lints it, and the server refuses to apply a commit that doesn't parse, keeping the last good version.

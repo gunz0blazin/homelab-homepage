@@ -1,7 +1,10 @@
 title: Home Lab (updated from GitHub)
 theme: dark
-color: slate
+color: rose
 layout:
+  Pipeline Test:
+    style: row
+    columns: 1
   Infrastructure:
     style: row
     columns: 3

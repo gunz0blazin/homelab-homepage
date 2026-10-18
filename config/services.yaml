@@ -1,3 +1,9 @@
+- Pipeline Test:
+    - Deployed from GitHub:
+        icon: mdi-check-circle
+        href: https://github.com/gunz0blazin/homelab-homepage
+        description: pushed at 19:21:46
+
 - Infrastructure:
     - Proxmox:
         icon: proxmox.png

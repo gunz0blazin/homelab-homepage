@@ -1,6 +1,3 @@
-- greeting:
-    text_size: 4xl
-    text: Welcome home
 - datetime:
     text_size: xl
     format:

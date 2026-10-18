@@ -129,6 +129,20 @@ button:focus-visible {
     flex-wrap: wrap;
     gap: 0.5rem;
   }
+
+  /* Clock: full width, centred */
+  .information-widget-datetime {
+    width: 100%;
+    align-items: center;
+  }
+
+  .information-widget-datetime > div {
+    justify-content: center !important;
+  }
+
+  .information-widget-datetime span {
+    text-align: center;
+  }
 }
 
 /* No hover lift on touch screens */

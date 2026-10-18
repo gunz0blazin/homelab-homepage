@@ -1,0 +1,11 @@
+services:
+  homepage:
+    image: ghcr.io/gethomepage/homepage:latest
+    container_name: homepage
+    restart: unless-stopped
+    ports:
+      - "3001:3000"
+    environment:
+      HOMEPAGE_ALLOWED_HOSTS: dash.home,192.168.20.13:3001
+    volumes:
+      - ./config:/app/config

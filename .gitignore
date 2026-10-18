@@ -1,0 +1,7 @@
+# Homepage writes its logs into the config folder
+config/logs/
+
+# Never commit secrets or keys
+*.env
+id_ed25519*
+ntfy_url

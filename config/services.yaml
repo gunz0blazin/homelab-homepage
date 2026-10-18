@@ -1,0 +1,40 @@
+- Infrastructure:
+    - Proxmox:
+        icon: proxmox.png
+        href: http://proxmox.home
+        siteMonitor: https://192.168.20.10:8006
+    - Pi-hole:
+        icon: pi-hole.png
+        href: http://pihole.home/admin
+        siteMonitor: http://192.168.20.11/admin
+    - Nginx Proxy Manager:
+        icon: nginx-proxy-manager.png
+        href: http://npm.home
+        siteMonitor: http://192.168.20.13:81
+    - UniFi:
+        icon: unifi.png
+        href: http://unifi.home
+    - Synology:
+        icon: synology.png
+        href: http://nas.home
+        siteMonitor: http://192.168.1.9:5000
+
+- Media:
+    - Plex:
+        icon: plex.png
+        href: http://plex.home
+        siteMonitor: http://192.168.20.20:32400
+    - qBittorrent:
+        icon: qbittorrent.png
+        href: http://qbit.home
+        siteMonitor: http://192.168.20.21:8080
+
+- Monitoring and Home:
+    - Grafana:
+        icon: grafana.png
+        href: http://grafana.home
+        siteMonitor: http://192.168.20.13:3000
+    - Home Assistant:
+        icon: home-assistant.png
+        href: http://ha.home
+        siteMonitor: http://192.168.20.60:8123

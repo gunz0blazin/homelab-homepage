@@ -1,0 +1,13 @@
+title: Home Lab
+theme: dark
+color: slate
+layout:
+  Infrastructure:
+    style: row
+    columns: 3
+  Media:
+    style: row
+    columns: 2
+  Monitoring and Home:
+    style: row
+    columns: 2

@@ -1,0 +1,24 @@
+name: checks
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: YAML lint
+        run: |
+          pip install --quiet yamllint
+          yamllint -d '{extends: default, rules: {line-length: disable, document-start: disable, truthy: disable, indentation: {spaces: consistent, indent-sequences: consistent}}}' config docker-compose.yml
+
+      - name: Compose file is valid
+        run: docker compose -f docker-compose.yml config -q
+
+      - name: Shell scripts parse
+        run: |
+          sh -n deploy/homepage-deploy
+          sh -n deploy/bootstrap.sh

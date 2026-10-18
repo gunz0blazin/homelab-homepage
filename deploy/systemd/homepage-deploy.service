@@ -1,0 +1,8 @@
+[Unit]
+Description=Deploy the Homepage dashboard from GitHub
+After=network-online.target docker.service
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/homepage-deploy

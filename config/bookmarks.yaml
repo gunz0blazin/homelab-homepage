@@ -1,10 +1,10 @@
 - Quick Links:
     - Tailscale:
-        - icon: tailscale.png
+        - icon: si-tailscale-#cdd6f4
           href: https://login.tailscale.com/admin/machines
           description: Admin console
     - Dashboard repo:
-        - icon: github.png
+        - icon: si-github-#cdd6f4
           href: https://github.com/gunz0blazin/homelab-homepage
           description: This dashboard's config
     - Catppuccin:

@@ -81,6 +81,32 @@ button:focus-visible {
   font-size: 0.72rem;
 }
 
+/* Quick links get the same card look */
+.bookmark > a {
+  background: rgba(49, 50, 68, 0.55) !important;
+  border: 1px solid rgba(205, 214, 244, 0.08);
+  border-radius: 12px !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.24) !important;
+  overflow: hidden;
+  transition: transform 0.18s ease, border-color 0.18s ease,
+    box-shadow 0.18s ease, background 0.18s ease;
+}
+
+.bookmark > a:hover {
+  background: rgba(69, 71, 90, 0.60) !important;
+  border-color: rgba(203, 166, 247, 0.55);
+  box-shadow: 0 8px 22px rgba(203, 166, 247, 0.14) !important;
+  transform: translateY(-2px);
+}
+
+.bookmark-icon {
+  background: rgba(24, 24, 37, 0.55) !important;   /* mantle */
+}
+
+.bookmark-name {
+  font-weight: 600;
+}
+
 /* Phones */
 @media (max-width: 640px) {
   #layout-groups {
@@ -107,7 +133,8 @@ button:focus-visible {
 
 /* No hover lift on touch screens */
 @media (hover: none) {
-  .service-card:hover {
+  .service-card:hover,
+  .bookmark > a:hover {
     transform: none;
   }
 }

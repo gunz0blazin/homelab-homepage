@@ -25,6 +25,8 @@ Edit `config/services.yaml` (tiles) or `config/settings.yaml` (look and layout),
    ```
 3. The bootstrap runs the first deploy and starts the timer.
 
+Notifications are optional. The bootstrap asks for an ntfy topic URL (stored in `/etc/homepage-deploy/ntfy_url`). For a protected topic or a self-hosted server, put an access token in `/etc/homepage-deploy/ntfy_token`. You get a message when the dashboard updates and when a commit is rejected.
+
 Useful commands on the host:
 
 ```

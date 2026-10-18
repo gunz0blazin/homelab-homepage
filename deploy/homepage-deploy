@@ -17,9 +17,12 @@ PROJECT=homepage
 . "$CONF/deploy.env"    # REPO_URL, BRANCH
 
 # Optional push notification: put the full ntfy topic URL in $CONF/ntfy_url.
+# For a protected topic or a self-hosted server, also put an access token in $CONF/ntfy_token.
 notify() {    # notify <title> <tags> <body>
   [ -s "$CONF/ntfy_url" ] || return 0
-  curl -fsS -m 10 -H "Title: $1" -H "Tags: $2" -d "$3" "$(cat "$CONF/ntfy_url")" >/dev/null 2>&1 || true
+  auth=
+  [ -s "$CONF/ntfy_token" ] && auth="Authorization: Bearer $(cat "$CONF/ntfy_token")"
+  curl -fsS -m 10 ${auth:+-H "$auth"} -H "Title: $1" -H "Tags: $2" -d "$3" "$(cat "$CONF/ntfy_url")" >/dev/null 2>&1 || true
 }
 
 compose() { docker compose -p "$PROJECT" -f "$SRC/docker-compose.yml" "$@"; }

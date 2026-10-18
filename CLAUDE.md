@@ -6,6 +6,8 @@ Config for the Homepage dashboard at `http://dash.home` (container on the Docker
 
 - Add, remove or edit tiles: `config/services.yaml`
 - Title, theme, layout of the groups: `config/settings.yaml`
+- Header row (greeting, clock, host gauges, search): `config/widgets.yaml`; quick links: `config/bookmarks.yaml`
+- Look and feel: `config/custom.css` (Catppuccin Mocha)
 - Container settings (port, allowed hosts): `docker-compose.yml`
 - Commit and push to `main`. The dashboard updates within 5 minutes (`sudo homepage-deploy` on the Docker host forces it).
 
@@ -16,6 +18,10 @@ Config for the Homepage dashboard at `http://dash.home` (container on the Docker
 - Addresses follow the lab plan: Lab is `192.168.20.0/24` (Proxmox `.10`, Pi-hole `.11`, Docker host `.13`); the NAS is `192.168.1.9` until it moves to Lab (`.15`). Names are `<service>.home`, served by Nginx Proxy Manager.
 - Each service is one tile: `icon` (a name from the dashboard-icons set), `href` (the `.home` name), and `siteMonitor` (direct IP and port, for the status dot). Drop `siteMonitor` for HTTPS backends with self-signed certificates if the dot stays red.
 - Keep YAML to two-space indents, no tabs. GitHub Actions (`checks.yml`) lints it, and the server refuses to apply a commit that doesn't parse, keeping the last good version.
+
+## Theme
+
+The Catppuccin Mocha look lives in `config/custom.css`. Homepage colours everything from `--color-50..900` set under `html.theme-<color>`, and the CSS remaps the **slate** palette, so keep `color: slate` in `settings.yaml` (another colour name bypasses it). Selectors that exist in the rendered page: `.service-card`, `.service-name`, `.service-description`, `.service-group-name`, `#layout-groups`, `#information-widgets`. After changing it, check a desktop-width and a phone-width view (headless Chromium with `--dump-dom` or `--screenshot` against `http://dash.home` works).
 
 ## Layout
 

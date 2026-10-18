@@ -1,46 +1,49 @@
-- Pipeline Test:
-    - Deployed from GitHub:
-        icon: mdi-check-circle
-        href: https://github.com/gunz0blazin/homelab-homepage
-        description: pushed at 19:21:46
-
 - Infrastructure:
     - Proxmox:
         icon: proxmox.png
         href: http://proxmox.home
+        description: Hypervisor
         siteMonitor: https://192.168.20.10:8006
     - Pi-hole:
         icon: pi-hole.png
         href: http://pihole.home/admin
+        description: DNS and ad blocking
         siteMonitor: http://192.168.20.11/admin
     - Nginx Proxy Manager:
         icon: nginx-proxy-manager.png
         href: http://npm.home
+        description: Reverse proxy
         siteMonitor: http://192.168.20.13:81
     - UniFi:
         icon: unifi.png
         href: http://unifi.home
+        description: Network controller
     - Synology:
         icon: synology.png
         href: http://nas.home
+        description: NAS and storage
         siteMonitor: http://192.168.1.9:5000
 
 - Media:
     - Plex:
         icon: plex.png
         href: http://plex.home
+        description: Media server
         siteMonitor: http://192.168.20.20:32400
     - qBittorrent:
         icon: qbittorrent.png
         href: http://qbit.home
+        description: Downloads
         siteMonitor: http://192.168.20.21:8080
 
 - Monitoring and Home:
     - Grafana:
         icon: grafana.png
         href: http://grafana.home
+        description: Dashboards and metrics
         siteMonitor: http://192.168.20.13:3000
     - Home Assistant:
         icon: home-assistant.png
         href: http://ha.home
+        description: Smart home
         siteMonitor: http://192.168.20.60:8123

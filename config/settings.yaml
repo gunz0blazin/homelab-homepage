@@ -1,16 +1,25 @@
-title: Home Lab (updated from GitHub)
+title: Home Lab
 theme: dark
-color: rose
+color: slate
+headerStyle: boxedWidgets
+cardBlur: md
+useEqualHeights: true
+hideVersion: true
+statusStyle: dot
 layout:
-  Pipeline Test:
-    style: row
-    columns: 1
   Infrastructure:
+    icon: mdi-server-network
     style: row
     columns: 3
   Media:
+    icon: mdi-movie-open
     style: row
     columns: 2
   Monitoring and Home:
+    icon: mdi-chart-line
     style: row
     columns: 2
+  Quick Links:
+    icon: mdi-link-variant
+    style: row
+    columns: 3

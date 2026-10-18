@@ -1,0 +1,13 @@
+- Quick Links:
+    - Tailscale:
+        - icon: tailscale.png
+          href: https://login.tailscale.com/admin/machines
+          description: Admin console
+    - Dashboard repo:
+        - icon: github.png
+          href: https://github.com/gunz0blazin/homelab-homepage
+          description: This dashboard's config
+    - Catppuccin:
+        - icon: catppuccin.png
+          href: https://catppuccin.com/palette
+          description: Mocha palette

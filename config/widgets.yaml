@@ -1,0 +1,17 @@
+- greeting:
+    text_size: 4xl
+    text: Welcome home
+- datetime:
+    text_size: xl
+    format:
+      dateStyle: long
+      timeStyle: short
+      hourCycle: h12
+- resources:
+    label: Docker host
+    cpu: true
+    memory: true
+    disk: /
+- search:
+    provider: duckduckgo
+    target: _blank

@@ -1,0 +1,113 @@
+/* Catppuccin Mocha for Homepage (palette: https://catppuccin.com/palette).
+   Homepage colours everything from --color-50..900 (RGB triplets set under .theme-<color>
+   on <html>), so the slate palette is remapped to Mocha here. Keep settings.yaml on
+   `color: slate`; another colour name would bypass this block. */
+
+html,
+html.theme-slate {
+  --bg-color: 30 30 46 !important;            /* base */
+  --color-50: 205 214 244 !important;         /* text */
+  --color-100: 205 214 244 !important;
+  --color-200: 205 214 244 !important;
+  --color-300: 166 173 200 !important;        /* subtext0 */
+  --color-400: 147 153 178 !important;        /* overlay2 */
+  --color-500: 108 112 134 !important;        /* overlay0 */
+  --color-600: 88 91 112 !important;          /* surface2 */
+  --color-700: 69 71 90 !important;           /* surface1 */
+  --color-800: 30 30 46 !important;           /* base */
+  --color-900: 24 24 37 !important;           /* mantle */
+  --color-logo-start: 203 166 247 !important; /* mauve */
+  --color-logo-stop: 137 180 250 !important;  /* blue */
+  --scrollbar-thumb: #585b70 !important;
+  --scrollbar-track: #181825 !important;
+}
+
+html,
+body {
+  background: #1e1e2e;
+}
+
+#page_wrapper {
+  background:
+    radial-gradient(900px 520px at 8% -8%, rgba(203, 166, 247, 0.20), transparent 60%),
+    radial-gradient(800px 500px at 100% 0%, rgba(137, 180, 250, 0.16), transparent 55%),
+    radial-gradient(900px 600px at 50% 120%, rgba(148, 226, 213, 0.10), transparent 60%),
+    #1e1e2e;
+}
+
+::selection {
+  background: rgba(203, 166, 247, 0.35);
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #b4befe;
+  outline-offset: 2px;
+}
+
+/* Group headings */
+.service-group-name,
+.bookmark-group-name {
+  color: #cba6f7 !important;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* Cards */
+.service-card {
+  background: rgba(49, 50, 68, 0.55) !important;   /* surface0, translucent */
+  border: 1px solid rgba(205, 214, 244, 0.08);
+  border-radius: 14px !important;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.28) !important;
+  transition: transform 0.18s ease, border-color 0.18s ease,
+    box-shadow 0.18s ease, background 0.18s ease;
+}
+
+.service-card:hover {
+  background: rgba(69, 71, 90, 0.60) !important;   /* surface1 */
+  border-color: rgba(203, 166, 247, 0.55);
+  box-shadow: 0 8px 26px rgba(203, 166, 247, 0.16) !important;
+  transform: translateY(-2px);
+}
+
+.service-name {
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.service-description {
+  font-size: 0.72rem;
+}
+
+/* Phones */
+@media (max-width: 640px) {
+  #layout-groups {
+    margin: 0.75rem !important;
+  }
+
+  .service-card {
+    border-radius: 12px !important;
+  }
+
+  .service-title {
+    min-height: 3.5rem;
+  }
+
+  .service-name {
+    font-size: 0.95rem;
+  }
+
+  #information-widgets {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+}
+
+/* No hover lift on touch screens */
+@media (hover: none) {
+  .service-card:hover {
+    transform: none;
+  }
+}

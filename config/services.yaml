@@ -1,9 +1,4 @@
 - Infrastructure:
-    - Proxmox:
-        icon: proxmox.png
-        href: https://192.168.20.10:8006
-        description: Hypervisor
-        siteMonitor: https://192.168.20.10:8006
     - Pi-hole:
         icon: pi-hole.png
         href: http://pihole.home/admin

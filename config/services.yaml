@@ -46,7 +46,9 @@
         icon: grafana.png
         href: http://grafana.home/d/homelab-overview
         description: Service status and host load
+        siteMonitor: http://192.168.20.13:3000/api/health
     - Homelab Mobile:
         icon: grafana.png
         href: http://grafana.home/d/homelab-mobile
         description: Phone-sized status
+        siteMonitor: http://192.168.20.13:3000/api/health

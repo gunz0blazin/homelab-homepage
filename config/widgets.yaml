@@ -1,7 +1,7 @@
 - datetime:
-    text_size: xl
+    text_size: 2xl
     format:
-      dateStyle: long
+      dateStyle: full
       timeStyle: short
       hourCycle: h12
 - resources:
@@ -9,6 +9,3 @@
     cpu: true
     memory: true
     disk: /
-- search:
-    provider: duckduckgo
-    target: _blank

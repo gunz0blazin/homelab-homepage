@@ -1,25 +1,26 @@
 title: Home Lab
 theme: dark
 color: slate
-headerStyle: boxedWidgets
+headerStyle: clean
 cardBlur: md
 useEqualHeights: true
 hideVersion: true
 statusStyle: dot
+disableCollapse: true
 layout:
   Infrastructure:
     icon: mdi-server-network
     style: row
-    columns: 3
+    columns: 1
   Media:
     icon: mdi-movie-open
     style: row
-    columns: 2
+    columns: 1
   Monitoring and Home:
     icon: mdi-chart-line
     style: row
-    columns: 2
+    columns: 1
   Quick Links:
     icon: mdi-link-variant
     style: row
-    columns: 3
+    columns: 1

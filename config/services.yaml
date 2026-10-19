@@ -43,6 +43,11 @@
         href: http://status.home
         description: Uptime and alerts
         siteMonitor: http://192.168.20.13:3002
+    - Homelab (Testing):
+        icon: grafana.png
+        href: http://grafana.home/d/homelab
+        description: Testing page for the new dashboard
+        siteMonitor: http://192.168.20.13:3000/api/health
     - Homelab Overview:
         icon: grafana.png
         href: http://grafana.home/d/homelab-overview

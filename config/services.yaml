@@ -42,3 +42,12 @@
         href: http://ha.home
         description: Smart home
         siteMonitor: http://192.168.20.60:8123
+    - Uptime Kuma:
+        icon: uptime-kuma.png
+        href: http://status.home
+        description: Uptime and alerts
+        siteMonitor: http://192.168.20.13:3002
+    - Homelab Overview:
+        icon: grafana.png
+        href: http://grafana.home/d/homelab-overview
+        description: Service status and host load

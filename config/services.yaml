@@ -32,11 +32,6 @@
         siteMonitor: http://192.168.20.21:8080
 
 - Monitoring and Home:
-    - Grafana:
-        icon: grafana.png
-        href: http://grafana.home
-        description: Dashboards and metrics
-        siteMonitor: http://192.168.20.13:3000
     - Home Assistant:
         icon: home-assistant.png
         href: http://ha.home

@@ -89,7 +89,7 @@ button:focus-visible {
 /* Groups as glass panels in a responsive grid */
 #layout-groups {
   display: grid !important;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
   gap: 1.25rem;
   align-items: start;
   margin: 1.25rem 2rem 2rem !important;

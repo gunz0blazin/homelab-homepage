@@ -51,3 +51,7 @@
         icon: grafana.png
         href: http://grafana.home/d/homelab-overview
         description: Service status and host load
+    - Homelab Mobile:
+        icon: grafana.png
+        href: http://grafana.home/d/homelab-mobile
+        description: Phone-sized status

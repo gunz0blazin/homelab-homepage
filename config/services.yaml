@@ -6,7 +6,7 @@
         siteMonitor: http://192.168.20.11/admin
     - Nginx Proxy Manager:
         icon: nginx-proxy-manager.png
-        href: http://npm.home
+        href: http://192.168.20.13:81/nginx/proxy
         description: Reverse proxy
         siteMonitor: http://192.168.20.13:81
     - UniFi:
